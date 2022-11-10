@@ -3,12 +3,14 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Announcements from '../components/Announcements'
 import NavBar from '../components/NavBar'
+import React, { useState } from 'react'
 
 export default function Home() {
+  const [ navOpen, setNavOpen ] = useState(false)
   return (
     <>
     <Announcements />
-    <NavBar />
+    <NavBar navOpen = {navOpen} setNavOpen = {setNavOpen} />
     <div>slideshow</div>
     <div>
       category cards
