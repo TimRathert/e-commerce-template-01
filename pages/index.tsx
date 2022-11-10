@@ -1,9 +1,10 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Announcements from '../components/Announcements'
 import NavBar from '../components/NavBar'
-import React, { useState } from 'react'
+import MainSlideShow from '../components/MainSlideShow'
 
 export default function Home() {
   const [ navOpen, setNavOpen ] = useState(false)
@@ -11,7 +12,7 @@ export default function Home() {
     <>
     <Announcements />
     <NavBar navOpen = {navOpen} setNavOpen = {setNavOpen} />
-    <div>slideshow</div>
+    <MainSlideShow navOpen = {navOpen}/>
     <div>
       category cards
       <div>cat 1</div>
