@@ -1,20 +1,29 @@
 import React from 'react'
-import { Transition } from '@headlessui/react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 
 
 function MainSlideShow(prop) {
-    let currentSlide = 1
-    const slideShow = () => {
-        let i
 
+    const EmblaCarousel = () => {
+        const [emblaRef] = useEmblaCarousel({loop: true}, [Autoplay()])
+        return (
+            <div className="overflow-hidden z-0" ref={emblaRef}>
+                <div className="flex">
+                   <img src='https://placeimg.com/640/360/people' className="flex-[0_0_100%] aspect-square md:aspect-video object-cover w-screen max-h-[100vh]" />
+                   <img src='https://placeimg.com/640/360/people' className="flex-[0_0_100%] aspect-square md:aspect-video object-cover w-screen max-h-[100vh]" />
+                   <img src='https://placeimg.com/640/360/people' className="flex-[0_0_100%] aspect-square md:aspect-video object-cover w-screen max-h-[100vh]" />
+                </div>
+            </div>
+        )
     }
-  return (
-    <div className='flex snap-x snap-mandatory overflow-hidden'>
-        {/* <img src='https://via.placeholder.com/1500/' className='w-screen max-h-[90vh]'/> */}
-        <div className='snap-start min-w-full h-[300px] max-h-[90vh] flex items-center justify-center' id='slide-1'>Slide 1</div>
-        <div className='snap-start min-w-full h-[300px] max-h-[90vh] flex items-center justify-center' id='slide-2'>Slide 2</div>
-        <div className='snap-start min-w-full h-[300px] max-h-[90vh] flex items-center justify-center' id='slide-3'>Slide 3</div>
-    </div>
+    
+    return (
+    <>
+        <EmblaCarousel />
+        {/* <img src='https://via.placeholder.com/1500/' className='w-screen max-h-[90vh]'/> */}    
+    </>
+
   )
 }
 

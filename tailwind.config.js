@@ -6,7 +6,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    animationDelay: {
+      500: "500ms",
+      750: "750ms",
+      1000: '1000ms',
+     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animation-delay"),
+  ],
 }

@@ -14,6 +14,9 @@ export default function Home() {
     <NavBar navOpen = {navOpen} setNavOpen = {setNavOpen} />
     <MainSlideShow navOpen = {navOpen}/>
     <div>
+      <p className='text-center m-20 text-2xl'>Site Description for SEO</p> 
+    </div>
+    <div>
       category cards
       <div>cat 1</div>
       <div>cat 2</div>
